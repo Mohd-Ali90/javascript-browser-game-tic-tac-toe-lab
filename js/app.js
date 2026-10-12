@@ -113,12 +113,17 @@ function checkForTie() {
     if (winner === true) {
         return
     }
-    for (let i = 0; i < board.length; i++) {
-        if (board[i] === '' || board[i] === 'X') {
-            tie = false
-        } else {
-            tie = true
-        }
+
+    let isTie = true
+    for(let cell of board){
+        if(cell === '') isTie = false
+    }
+
+    if(isTie){
+        tie = true
+    }
+    else{
+        tie = false
     }
 }
 
